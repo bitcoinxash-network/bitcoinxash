@@ -34,7 +34,11 @@ No other options are needed, the paths are automatically configured.
 
 #### For macOS cross compilation
 
-    sudo apt-get install curl librsvg2-bin libtiff-tools bsdmainutils cmake imagemagick libcap-dev libz-dev libbz2-dev python-setuptools
+    sudo apt-get install -y \
+    git ruby apt-cacher-ng qemu-utils debootstrap lxc python-cheetah parted kpartx bridge-utils \
+    make curl firewalld ca-certificates curl g++ git-core pkg-config autoconf librsvg2-bin libtiff-tools \
+    libtool automake faketime bsdmainutils cmake imagemagick libcap-dev libz-dev libbz2-dev python python-dev \
+    python-setuptools fonts-tuffy
 
 #### For Win32/Win64 cross compilation
 
