@@ -32,8 +32,8 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/bcx-official/bcx.git"
-  "dir": "bcx"
+- "url": "https://github.com/bitcoinxash/bitcoinxash.git"
+  "dir": "bitcoinxash"
 files: []
 script: |
 

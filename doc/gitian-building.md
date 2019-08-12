@@ -281,9 +281,9 @@ Clone the git repositories for bcx and gitian and then checkout the bcx version 
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/bcx-official/bcx.git
-cd bcx
-git checkout v${VERSION}
+git clone https://github.com/bitcoinxash/bitcoinxash.git
+cd bitcoinxash
+git checkout ${VERSION}
 cd ..
 ```
 
@@ -350,7 +350,7 @@ Output from `gbuild` will look something like
     remote: Total 35606 (delta 0), reused 0 (delta 0)
     Receiving objects: 100% (35606/35606), 26.52 MiB | 4.28 MiB/s, done.
     Resolving deltas: 100% (25724/25724), done.
-    From https://github.com/bcx-official/bcx
+    From https://github.com/bitcoinxash/bitcoinxash
     ... (new tags, new branch etc)
     --- Building for trusty x86_64 ---
     Stopping target if it is up
@@ -379,9 +379,12 @@ For example:
 ```bash
 URL=https://github.com/konez2k/bcx.git
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
-./bin/gbuild --commit bcx=${COMMIT} --url bcx=${URL} ../bcx/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit bcx=${COMMIT} --url bcx=${URL} ../bcx/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit bcx=${COMMIT} --url bcx=${URL} ../bcx/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit bitcoinxash=${version-1.0} --url bitcoinxash=https://github.com/bitcoinxash/bitcoinxash.git ../bitcoinxash/contrib/gitian-descriptors/gitian-linux.yml
+
+./bin/gbuild --commit bitcoinxash=${version-1.0} --url bitcoinxash=https://github.com/bitcoinxash/bitcoinxash.git ../bitcoinxash/contrib/gitian-descriptors/gitian-win.yml
+
+./bin/gbuild --commit bitcoinxash=${version-1.0} --url bitcoinxash=https://github.com/bitcoinxash/bitcoinxash.git ../bitcoinxash/contrib/gitian-descriptors/gitian-osx.yml
+
 ```
 
 Signing externally
