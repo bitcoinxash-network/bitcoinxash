@@ -46,7 +46,11 @@ BCXは最先端の暗号通貨であり、他のほとんどの暗号通貨で�
 Buy NOW (https://www.bitcoinxash.com)
 
 Node available: 70
+
 Price 0.05 BTC / NODE (until 15 Aug 2019)
+
 Price 0.1 BTC / NODE (until 31 Aug 2019)
-Price 0.25 BTC / NODE (until 15 Sep 2019 ")
+
+Price 0.25 BTC / NODE (until 15 Sep 2019)
+
 Price 0.5 BTC / NODE (until 31 Sep 2019)
