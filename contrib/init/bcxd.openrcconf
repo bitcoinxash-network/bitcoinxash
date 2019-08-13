@@ -1,7 +1,7 @@
 # /etc/conf.d/bcxd: config file for /etc/init.d/bcxd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/bcx/bcx.conf"
+#BITCOIND_CONFIGFILE="/etc/bitcoinxash/bcx.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
 #BITCOIND_PIDDIR="/var/run/bcxd"

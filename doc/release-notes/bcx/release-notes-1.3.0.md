@@ -1,12 +1,12 @@
 BCX Core version 1.3.0 is now available from:
 
-  <https://github.com/bcx-official/bcx/releases>
+  <https://github.com/bitcoinxash/bitcoinxash/releases>
 
 This is a new minor version release, including various bug fixes and improvements.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/bcx-official/bcx/issues>
+  <https://github.com/bitcoinxash/bitcoinxash/issues>
 
 How to Upgrade
 ==============

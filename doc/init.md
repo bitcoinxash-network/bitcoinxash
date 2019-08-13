@@ -35,7 +35,7 @@ generate one from the shell yourself like this:
 
 bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'
 
-Once you have a password in hand, set rpcpassword= in /etc/bcx/bcx.conf
+Once you have a password in hand, set rpcpassword= in /etc/bitcoinxash/bcx.conf
 
 For an example configuration file that describes the configuration settings,
 see contrib/debian/examples/bcx.conf.
@@ -46,7 +46,7 @@ see contrib/debian/examples/bcx.conf.
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              /usr/bin/bcxd
-Configuration file:  /etc/bcx/bcx.conf
+Configuration file:  /etc/bitcoinxash/bcx.conf
 Data directory:      /var/lib/bcxd
 PID file:            /var/run/bcxd/bcxd.pid (OpenRC and Upstart)
                      /var/lib/bcxd/bcxd.pid (systemd)

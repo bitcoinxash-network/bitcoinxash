@@ -10,9 +10,9 @@ Type=forking
 PIDFile=/var/lib/bcxd/bcxd.pid
 
 ExecStart=/usr/bin/bcxd -daemon -pid=/var/lib/bcxd/bcxd.pid \
-          -conf=/etc/bcx/bcx.conf -datadir=/var/lib/bcxd
+          -conf=/etc/bitcoinxash/bcx.conf -datadir=/var/lib/bcxd
 
-ExecStop=-/usr/bin/bcx-cli -conf=/etc/bcx/bcx.conf \
+ExecStop=-/usr/bin/bcx-cli -conf=/etc/bitcoinxash/bcx.conf \
          -datadir=/var/lib/bcxd stop
 
 Restart=always

@@ -22,9 +22,9 @@ Build-Depends: debhelper,
  libqrencode-dev,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
-Homepage: http://www.bcx.org
-Vcs-Git: git://github.com/bcx-official/bcx.git
-Vcs-Browser: http://github.com/bcx-official/bcx
+Homepage: http://www.bitcoinxash.com
+Vcs-Git: git://github.com/bitcoinxash/bitcoinxash.git
+Vcs-Browser: http://github.com/bitcoinxash/bitcoinxash
 
 Package: bcxd
 Architecture: any

@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/bcx-official/bcx-detached-sigs.git"
+- "url": "https://github.com/bitcoinxash/bitcoinxash-detached-sigs.git"
   "dir": "signature"
 files:
 - "bcx-osx-unsigned.tar.gz"

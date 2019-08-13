@@ -3,7 +3,7 @@ BCX Core
 
 Setup
 ---------------------
-[BCX Core](http://bcx.org) is the original BCX client and it builds the backbone of the network. However, it downloads and stores the entire history of BCX transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[BCX Core](http://bitcoinxash.com) is the original BCX client and it builds the backbone of the network. However, it downloads and stores the entire history of BCX transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -26,7 +26,7 @@ Drag BCX-Qt to your applications folder, and then run BCX-Qt.
 
 ### Need Help?
 
-* Join our Discord server [Discord Server](https://discord.bcx.org)
+* Join our Discord server [Discord Server](https://discord.bitcoinxash.com)
 
 Building
 ---------------------
@@ -38,7 +38,7 @@ The following are developer notes on how to build BCX Core on your native platfo
 
 Development
 ---------------------
-The BCX repo's [root README](https://github.com/bcx-official/bcx/blob/master/README.md) contains relevant information on the development process and automated testing.
+The BCX repo's [root README](https://github.com/bitcoinxash/bitcoinxash/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

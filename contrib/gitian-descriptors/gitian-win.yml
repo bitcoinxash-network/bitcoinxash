@@ -1,5 +1,5 @@
 ---
-name: "bcx-win-1.2"
+name: "bcx-win-1.0.0"
 enable_cache: true
 suites:
 - "bionic"
@@ -23,7 +23,7 @@ packages:
 - "python"
 - "rename"
 remotes:
-- "url": "https://github.com/bcx-official/bcx.git"
+- "url": "https://github.com/bitcoinxash/bitcoinxash.git"
   "dir": "bcx"
 files: []
 script: |

@@ -3,8 +3,8 @@ Release Process
 
 Before every release candidate:
 
-* Update translations see [translation_process.md](https://github.com/bcx-official/bcx/blob/master/doc/translation_process.md#synchronising-translations).
-* Update manpages, see [gen-manpages.sh](https://github.com/bcx-official/bcx/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update translations see [translation_process.md](https://github.com/bitcoinxash/bitcoinxash/blob/master/doc/translation_process.md#synchronising-translations).
+* Update manpages, see [gen-manpages.sh](https://github.com/bitcoinxash/bitcoinxash/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -25,10 +25,10 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/bcx/gitian.sigs.git
-    git clone https://github.com/bcx-official/bcx-detached-sigs.git
+    git clone https://github.com/bitcoinxash/gitian.sigs.git
+    git clone https://github.com/bitcoinxash/bitcoinxash-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/bcx-official/bcx.git
+    git clone https://github.com/bitcoinxash/bitcoinxash.git
 
 ### BCX maintainers/release engineers, suggestion for writing release notes
 
@@ -85,7 +85,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../bcx/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../bitcoinxash/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -101,22 +101,22 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 ### Build and sign BCX Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit bcx=v${VERSION} ../bcx/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bcx/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gbuild --memory 3000 --commit bcx=v${VERSION} ../bitcoinxash/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bitcoinxash/contrib/gitian-descriptors/gitian-linux.yml
     mv build/out/bcx-*.tar.gz build/out/src/bcx-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit bcx=v${VERSION} ../bcx/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../bcx/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gbuild --memory 3000 --commit bcx=v${VERSION} ../bitcoinxash/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../bitcoinxash/contrib/gitian-descriptors/gitian-win.yml
     mv build/out/bcx-*-win-unsigned.tar.gz inputs/bcx-win-unsigned.tar.gz
     mv build/out/bcx-*.zip build/out/bcx-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit bcx=v${VERSION} ../bcx/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../bcx/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gbuild --memory 3000 --commit bcx=v${VERSION} ../bitcoinxash/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../bitcoinxash/contrib/gitian-descriptors/gitian-osx.yml
     mv build/out/bcx-*-osx-unsigned.tar.gz inputs/bcx-osx-unsigned.tar.gz
     mv build/out/bcx-*.tar.gz build/out/bcx-*.dmg ../
 
-    ./bin/gbuild --memory 3000 --commit bcx=v${VERSION} ../bcx/contrib/gitian-descriptors/gitian-aarch64.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bcx/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gbuild --memory 3000 --commit bcx=v${VERSION} ../bitcoinxash/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bitcoinxash/contrib/gitian-descriptors/gitian-aarch64.yml
     mv build/out/bcx-*.tar.gz build/out/src/bcx-*.tar.gz ../
     popd
 
@@ -138,10 +138,10 @@ Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../bcx/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../bcx/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bcx/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../bcx/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../bitcoinxash/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../bitcoinxash/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bitcoinxash/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../bitcoinxash/contrib/gitian-descriptors/gitian-aarch64.yml
     popd
 
 ### Next steps:
@@ -191,23 +191,23 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [bcx-detached-sigs](https://github.com/bcx-official/bcx-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [bcx-detached-sigs](https://github.com/bitcoinxash/bitcoinxash-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../bcx/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../bcx/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../bcx/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gbuild -i --commit signature=v${VERSION} ../bitcoinxash/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../bitcoinxash/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../bitcoinxash/contrib/gitian-descriptors/gitian-osx-signer.yml
     mv build/out/bcx-osx-signed.dmg ../bcx-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../bcx/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../bcx/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../bcx/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gbuild -i --commit signature=v${VERSION} ../bitcoinxash/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../bitcoinxash/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../bitcoinxash/contrib/gitian-descriptors/gitian-win-signer.yml
     mv build/out/bcx-*win64-setup.exe ../bcx-${VERSION}-win64-setup.exe
     mv build/out/bcx-*win32-setup.exe ../bcx-${VERSION}-win32-setup.exe
     popd
@@ -247,7 +247,7 @@ The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the bcx.org server*.
+space *do not upload these to the bitcoinxash.com server*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -267,6 +267,6 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/bcx-official/bcx/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/bitcoinxash/bitcoinxash/releases/new) with a link to the archived release notes.
 
   - Celebrate
