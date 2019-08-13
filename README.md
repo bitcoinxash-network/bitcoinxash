@@ -9,7 +9,7 @@ BCXは最先端の暗号通貨であり、他のほとんどの暗号通貨で�
   ネットワークを保護し、上記の機能を提供するために使用される技術、各マスターノードは保護されています
   1000 BCXの担保付き
 
-詳細は [bitcoinxash.com](http://www.bcx.com) お知らせスレッドをご覧ください [BitcoinTalk](https://bitcointalk.org/index.php?topic=5171521)
+詳細は [bitcoinxash.com](https://www.bitcoinxash.com) お知らせスレッドをご覧ください [BitcoinTalk](https://bitcointalk.org/index.php?topic=5171521)
 
 ### Coin Specs
 <table>
@@ -43,3 +43,10 @@ BCXは最先端の暗号通貨であり、他のほとんどの暗号通貨で�
 
 </table>
 </table>
+Buy NOW (https://www.bitcoinxash.com)
+
+Node available: 70
+Price 0.05 BTC / NODE (until 15 Aug 2019)
+Price 0.1 BTC / NODE (until 31 Aug 2019)
+Price 0.25 BTC / NODE (until 15 Sep 2019 ")
+Price 0.5 BTC / NODE (until 31 Sep 2019)
